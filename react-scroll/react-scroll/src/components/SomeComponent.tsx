@@ -1,5 +1,5 @@
 import { useContext, useLayoutEffect, useRef } from 'react';
-import { useScrollProvider } from '../npm';
+import { useScrollProvider } from '@mm1802/react-scroll';
 const SomeComponent = (props: any) => {
   const { element, scrollTo } = useScrollProvider();
   return (

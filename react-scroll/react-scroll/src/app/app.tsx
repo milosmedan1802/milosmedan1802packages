@@ -1,22 +1,14 @@
-import { ScrollProvider } from '../npm';
+import { ScrollProvider } from '@mm1802/react-scroll';
 import { SomeComponent } from 'src/components/SomeComponent';
 export function App() {
   return (
     <div className="page">
       <ScrollProvider
-        scrolling={(obj) => {
-          console.log('scrolling', obj);
-        }}
-        onScrollToEnd={() => {
-          // console.log('end');
-        }}
-        onScrollToTop={() => {
-          // console.log('top');
-        }}
+        scrolling={(obj) => {}}
+        onScrollToEnd={() => {}}
+        onScrollToTop={() => {}}
         onScrollUp={(obj) => {}}
-        onScrollDown={(obj) => {
-          // console.log('top', obj);
-        }}
+        onScrollDown={(obj) => {}}
       >
         <SomeComponent></SomeComponent>
 

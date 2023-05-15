@@ -1,6 +1,5 @@
-import { PropsWithChildren, useRef, useLayoutEffect, useState } from 'react';
+import { PropsWithChildren, useRef, useLayoutEffect } from 'react';
 import { IWaypoint } from '../types';
-import { observe } from '../waypointService';
 import { runAnimation } from './service';
 
 const Waypoint = function ({
@@ -20,6 +19,7 @@ const Waypoint = function ({
           const { top } = boundingClientRect;
           onEnter && isIntersecting && onEnter();
           onLeave && !isIntersecting && onLeave();
+          if (!spyOn) return;
           elements.forEach((element: any) => {
             element.style['willChange'] = 'transform, opacity';
             runAnimation(isIntersecting, oneWay, top, element);

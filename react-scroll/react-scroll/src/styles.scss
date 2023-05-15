@@ -51,11 +51,9 @@ body {
 .to {
     transform: translateX(0);
 }
-
-.animate{
-    will-change: transform, opacity;
+.miki{
+    display: block;
 }
-
 
 .person-container {
     width: 100%;

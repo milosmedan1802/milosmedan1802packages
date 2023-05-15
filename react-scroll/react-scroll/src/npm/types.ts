@@ -39,7 +39,7 @@ export enum DIRECTION_VISIBLE {
 }
 
 export interface IWaypoint {
-  onEnter?: (target: HTMLElement) => void;
+  onEnter?: () => void;
   onLeave?: () => void;
   spyOn: string;
   oneWay?: boolean;

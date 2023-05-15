@@ -1,4 +1,4 @@
-import { PropsWithChildren, useRef, useLayoutEffect } from 'react';
+import { PropsWithChildren, useRef, useLayoutEffect, useState } from 'react';
 import { IWaypoint } from '../types';
 import { observe } from '../waypointService';
 import { runAnimation } from './service';
@@ -18,7 +18,10 @@ const Waypoint = function ({
         entries.forEach(({ isIntersecting, target, boundingClientRect }) => {
           const elements = target.querySelectorAll(spyOn);
           const { top } = boundingClientRect;
+          onEnter && isIntersecting && onEnter();
+          onLeave && !isIntersecting && onLeave();
           elements.forEach((element: any) => {
+            element.style['willChange'] = 'transform, opacity';
             runAnimation(isIntersecting, oneWay, top, element);
           });
         });

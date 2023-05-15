@@ -28,3 +28,19 @@ export interface IScrollObject {
 }
 
 export type styleProp = string | Partial<CSSStyleDeclaration>;
+
+// WAYPOINT
+
+export enum DIRECTION_VISIBLE {
+  ENTER_SCROLL_UP = 'ENTER_SCROLL_UP',
+  ENTER_SCROLL_DOWN = 'ENTER_SCROLL_DOWN',
+  LEAVE_UP = 'LEAVE_UP',
+  LEAVE_DOWN = 'LEAVE_DOWN',
+}
+
+export interface IWaypoint {
+  onEnter?: (target: HTMLElement) => void;
+  onLeave?: () => void;
+  spyOn: string;
+  oneWay?: boolean;
+}

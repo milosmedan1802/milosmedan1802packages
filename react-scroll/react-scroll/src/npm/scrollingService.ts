@@ -18,23 +18,9 @@ export const scrollObject = (el: HTMLDivElement, scrollObj: IScrollObject) => {
   };
 };
 
-// CSS OBJECTS
-export const wrapperStyleObj: {
-  position: 'relative';
-  height: '100%';
-  width: '100%';
-} = {
+export const scrollWrapperStyleObj: any = {
   position: 'relative',
   height: '100%',
   width: '100%',
-};
-
-export const scrollWrapperStyleObj: any = {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  height: '100%',
-  width: '100%',
-  overflowY: 'scroll',
-  overflowX: 'hidden',
+  overflow: 'scroll',
 };

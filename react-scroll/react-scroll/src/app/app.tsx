@@ -1,41 +1,32 @@
-import { ScrollProvider } from '@mm1802/react-scroll';
+import { ScrollProvider } from '../npm';
 import { SomeComponent } from 'src/components/SomeComponent';
+import { AnimateComponent } from 'src/components/AnimateComponent';
+import { useLayoutEffect } from 'react';
 export function App() {
   return (
     <div className="page">
       <ScrollProvider
-        scrolling={(obj) => {}}
+        scrolling={(obj) => {
+          // console.log('ovj', obj);
+        }}
         onScrollToEnd={() => {}}
         onScrollToTop={() => {}}
         onScrollUp={(obj) => {}}
         onScrollDown={(obj) => {}}
       >
         <SomeComponent></SomeComponent>
-
         <SomeComponent></SomeComponent>
-
         <SomeComponent></SomeComponent>
-
         <SomeComponent></SomeComponent>
-
         <SomeComponent></SomeComponent>
-
         <SomeComponent></SomeComponent>
-
         <SomeComponent></SomeComponent>
-
-        <SomeComponent index={1}></SomeComponent>
-
         <SomeComponent></SomeComponent>
-
+        <AnimateComponent />
         <SomeComponent></SomeComponent>
-
         <SomeComponent></SomeComponent>
-
         <SomeComponent></SomeComponent>
-
         <SomeComponent></SomeComponent>
-
         <SomeComponent></SomeComponent>
       </ScrollProvider>
     </div>

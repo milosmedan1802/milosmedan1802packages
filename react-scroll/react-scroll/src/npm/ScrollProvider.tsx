@@ -1,13 +1,15 @@
-import { PropsWithChildren, useLayoutEffect } from 'react';
+import { PropsWithChildren, useLayoutEffect, useRef, useState } from 'react';
 import {
   scrollBottomWatcher,
   scrollObject,
   scrollWrapperStyleObj,
-  wrapperStyleObj,
 } from './scrollingService';
 import { ScrollContext } from './ScrollContext';
 import { useScrollProviderState } from './useScrollProviderState';
-import { IScroll, SCROLL_DIRECTION } from './types';
+import { IScroll, IWaypoint, SCROLL_DIRECTION } from './types';
+import { useScrollProvider } from './useScrollProvider';
+import { isVisibleOnEnterScrollDown } from './waypointService';
+
 const ScrollProvider = ({
   children,
   scrolling,
@@ -81,14 +83,13 @@ const ScrollProvider = ({
         },
       }}
     >
-      <div style={wrapperStyleObj}>
-        <div
-          ref={scrollClientRef}
-          onScroll={onScroll}
-          style={scrollWrapperStyleObj}
-        >
-          {isMounted && children}
-        </div>
+      <div
+        id="scroll"
+        ref={scrollClientRef}
+        onScroll={onScroll}
+        style={scrollWrapperStyleObj}
+      >
+        {isMounted && children}
       </div>
     </ScrollContext.Provider>
   );

@@ -43,9 +43,6 @@ body {
     display: block;
 }
 
-.milos {
-    transition: .4s;
-}
 
 .from {
     transform: translateX(100%);
@@ -60,4 +57,18 @@ body {
     width: 100%;
     height: 20rem;
     background-color: rgb(42, 0, 182);
+}
+
+.cssClassFrom {
+    opacity: 0;
+    transform: translateX(25%);
+    display: block;
+}
+
+.cssClassTo {
+    opacity: 1;
+    transform: translateX(0%);
+    display: block;
+    transition: .5s;
+    transition-delay: 4s;
 }

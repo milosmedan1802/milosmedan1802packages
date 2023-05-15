@@ -37,10 +37,3 @@ export enum DIRECTION_VISIBLE {
   LEAVE_UP = 'LEAVE_UP',
   LEAVE_DOWN = 'LEAVE_DOWN',
 }
-
-export interface IWaypoint {
-  onEnter?: () => void;
-  onLeave?: () => void;
-  spyOn: string;
-  oneWay?: boolean;
-}

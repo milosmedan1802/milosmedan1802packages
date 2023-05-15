@@ -1,4 +1,4 @@
-import { PropsWithChildren, useLayoutEffect, useRef, useState } from 'react';
+import { PropsWithChildren, useLayoutEffect } from 'react';
 import {
   scrollBottomWatcher,
   scrollObject,
@@ -6,9 +6,7 @@ import {
 } from './scrollingService';
 import { ScrollContext } from './ScrollContext';
 import { useScrollProviderState } from './useScrollProviderState';
-import { IScroll, IWaypoint, SCROLL_DIRECTION } from './types';
-import { useScrollProvider } from './useScrollProvider';
-import { isVisibleOnEnterScrollDown } from './waypointService';
+import { IScroll, SCROLL_DIRECTION } from './types';
 
 const ScrollProvider = ({
   children,

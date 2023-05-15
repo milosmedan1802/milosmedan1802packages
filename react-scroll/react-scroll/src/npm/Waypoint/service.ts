@@ -1,5 +1,3 @@
-export const doAnimateInOneWay = (top: number) => top < 0;
-
 export const runAnimation = (
   isIntersecting: boolean,
   oneWay: boolean,
@@ -26,8 +24,6 @@ export const runAnimation = (
   }
 
   if (isIntersecting) {
-    // console.log('eeee', delay ? (delay as any) * 1 * 100 : 0);
-    // console.log('delllay', (delay as any) * 1000);
     element.style.transitionDelay = delay ? `${delay}s` : '0s';
     element.classList.remove(from);
     element.classList.add(to);

@@ -29,7 +29,7 @@ const AnimateComponent = () => {
                 data-anime={JSON.stringify({
                   from: {
                     opacity: 0,
-                    transform: 'translate(0%, 1000%)',
+                    transform: 'translate(0%, -100%)',
                   },
                   to: {
                     opacity: 1,

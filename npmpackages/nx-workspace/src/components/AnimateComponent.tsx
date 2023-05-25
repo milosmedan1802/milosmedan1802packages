@@ -10,7 +10,7 @@ const AnimateComponent = () => {
   return (
     <Waypoint
       spyOn={'.animate'}
-      oneWay={false}
+      oneWay={true}
       onEnter={() => {
         console.log('on enter');
       }}
@@ -19,17 +19,34 @@ const AnimateComponent = () => {
       }}
     >
       <div className="bg-green">
+        <span
+          className="animate"
+          data-delay={1}
+          data-dur={0.4}
+          data-anime={JSON.stringify({
+            from: {
+              opacity: 0,
+              transform: 'translate(-100%, 0%)',
+            },
+            to: {
+              opacity: 1,
+              transform: 'translate(0%, 0%)',
+            },
+          })}
+        >
+          ovo animarfnkajfdas
+        </span>
         {arr.map((item, index) => {
           return (
             <div key={index}>
               <span
-                className="animate miki"
-                data-delay={index * 0.05}
+                className="miki"
+                data-delay={index * 1}
                 data-dur={0.4}
                 data-anime={JSON.stringify({
                   from: {
                     opacity: 0,
-                    transform: 'translate(0%, -100%)',
+                    transform: 'translate(100%, 0%)',
                   },
                   to: {
                     opacity: 1,

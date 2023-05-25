@@ -2,6 +2,7 @@ import { useContext, useLayoutEffect, useRef } from 'react';
 import { useScrollProvider } from '../npm';
 
 const SomeComponent = (props: any) => {
+  const scrollContext = useScrollProvider();
   return (
     <div
       className={`${props && props.index === 1 ? 'bg-green' : 'bg-red'} veliko`}

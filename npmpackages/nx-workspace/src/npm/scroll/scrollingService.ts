@@ -10,7 +10,6 @@ export const scrollObject = (el: HTMLDivElement, scrollObj: IScrollObject) => {
   return {
     scrollEnd: scrollBottomWatcher(el),
     scrollPosition: el.scrollTop,
-    clientHeight: el.clientHeight,
     scrollDirection: determineScrollDirection(
       scrollObj.scrollPosition,
       el.scrollTop

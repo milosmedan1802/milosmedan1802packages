@@ -11,8 +11,6 @@ export enum SCROLL_DIRECTION {
 }
 
 export interface IScrollProvider {
-  element: any;
-  viewport: number;
   scrollPosition: number;
   scrollProviderScrollToEnd: boolean;
   scrollProviderScrollToTop: boolean;
@@ -23,13 +21,8 @@ export interface IScrollProvider {
 export interface IScrollObject {
   scrollEnd: boolean;
   scrollPosition: number;
-  clientHeight: number;
   scrollDirection: `${SCROLL_DIRECTION}`;
 }
-
-export type styleProp = string | Partial<CSSStyleDeclaration>;
-
-// WAYPOINT
 
 export enum DIRECTION_VISIBLE {
   ENTER_SCROLL_UP = 'ENTER_SCROLL_UP',

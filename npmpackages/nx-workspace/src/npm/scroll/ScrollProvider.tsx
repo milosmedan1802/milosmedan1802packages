@@ -1,4 +1,4 @@
-import { PropsWithChildren, useLayoutEffect } from 'react';
+import { PropsWithChildren } from 'react';
 import {
   scrollBottomWatcher,
   scrollObject,
@@ -16,18 +16,8 @@ const ScrollProvider = ({
   onScrollUp,
   onScrollDown,
 }: PropsWithChildren<IScroll>) => {
-  const {
-    previousScrollPosition,
-    scrollClientRef,
-    isMounted,
-    setIsMounted,
-    scrollObj,
-    setScrollObj,
-  } = useScrollProviderState();
-  // MOUNTED
-  useLayoutEffect(() => {
-    setIsMounted(() => true);
-  }, []);
+  const { previousScrollPosition, scrollClientRef, scrollObj, setScrollObj } =
+    useScrollProviderState();
 
   const onScroll = (el: any) => {
     // EMIT SCROLL OBJ
@@ -60,11 +50,7 @@ const ScrollProvider = ({
   return (
     <ScrollContext.Provider
       value={{
-        element: scrollClientRef.current!,
         scrollPosition: scrollObj.scrollPosition,
-        viewport: scrollClientRef.current
-          ? scrollClientRef.current!.clientHeight
-          : 0,
         scrollProviderScrollToEnd: scrollObj.scrollEnd,
         scrollProviderScrollToTop: scrollClientRef.current
           ? scrollClientRef.current.scrollTop === 0
@@ -82,12 +68,11 @@ const ScrollProvider = ({
       }}
     >
       <div
-        id="scroll"
         ref={scrollClientRef}
         onScroll={onScroll}
         style={scrollWrapperStyleObj}
       >
-        {isMounted && children}
+        {children}
       </div>
     </ScrollContext.Provider>
   );

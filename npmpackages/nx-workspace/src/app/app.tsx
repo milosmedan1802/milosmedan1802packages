@@ -1,7 +1,7 @@
 import { ScrollProvider } from '../npm';
 import { SomeComponent } from 'src/components/SomeComponent';
 import { AnimateComponent } from 'src/components/AnimateComponent';
-import { useLayoutEffect } from 'react';
+import { Person } from 'src/components/Person';
 export function App() {
   return (
     <div className="page">
@@ -25,6 +25,7 @@ export function App() {
         <AnimateComponent />
         <SomeComponent></SomeComponent>
         <SomeComponent></SomeComponent>
+        <Person />
         <SomeComponent></SomeComponent>
         <SomeComponent></SomeComponent>
         <SomeComponent></SomeComponent>

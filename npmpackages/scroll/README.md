@@ -31,12 +31,10 @@ import { useScrollProvider } from '@mm1802/react-scroll';
 const ctx = useScrollProvider();
 ```
 
-| PROPERTY                  | TYPE                  | DESCRIPTION                      |
-| ------------------------- | --------------------- | -------------------------------- |
-| element                   | any                   | HTML element of scroll container |
-| viewport                  | number                | height of scroll container       |
-| scrollPosition            | number                | value of scorlled position       |
-| scrollProviderScrollToEnd | boolean               | scrolled to end                  |
-| scrollProviderScrollToTop | boolean               | scrolled to top                  |
-| scrollDirection           | UP - DOWN             | scrolling direction              |
-| scrollTo                  | (top: number) => void | scroll to handler                |
+| PROPERTY                  | TYPE                  | DESCRIPTION                |
+| ------------------------- | --------------------- | -------------------------- |
+| scrollPosition            | number                | value of scorlled position |
+| scrollProviderScrollToEnd | boolean               | scrolled to end            |
+| scrollProviderScrollToTop | boolean               | scrolled to top            |
+| scrollDirection           | UP - DOWN             | scrolling direction        |
+| scrollTo                  | (top: number) => void | scroll to handler          |

@@ -19,7 +19,7 @@ const Person = () => {
       <span>ovo je person componenr</span>
       <button
         onClick={() => {
-          post('/todos', undefined);
+          post('/todos');
         }}
       >
         molos

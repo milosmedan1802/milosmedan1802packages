@@ -1,37 +1,22 @@
-import { ScrollProvider } from '../npm';
-import { SomeComponent } from 'src/components/SomeComponent';
-import { AnimateComponent } from 'src/components/AnimateComponent';
+import queryString from 'query-string';
 import { Person } from 'src/components/Person';
+import { HttpProvider } from 'src/npm/http/HttpProvider';
+
 export function App() {
   return (
     <div className="page">
-      <ScrollProvider
-        scrolling={(obj) => {
-          // console.log('ovj', obj);
+      <HttpProvider
+        baseUrl={'https://jsonplaceholder.typicode.com'}
+        paramsSerializer={{
+          serialize: (params) => {
+            return queryString.stringify(params);
+          },
+          indexes: false,
         }}
-        onScrollToEnd={() => {}}
-        onScrollToTop={() => {}}
-        onScrollUp={(obj) => {}}
-        onScrollDown={(obj) => {}}
       >
-        <SomeComponent></SomeComponent>
-        <SomeComponent></SomeComponent>
-        <SomeComponent></SomeComponent>
-        <SomeComponent></SomeComponent>
-        <SomeComponent></SomeComponent>
-        <SomeComponent></SomeComponent>
-        <SomeComponent></SomeComponent>
-        <SomeComponent></SomeComponent>
-        <AnimateComponent />
-        <SomeComponent></SomeComponent>
-        <SomeComponent></SomeComponent>
-        <Person />
-        <SomeComponent></SomeComponent>
-        <SomeComponent></SomeComponent>
-        <SomeComponent></SomeComponent>
-      </ScrollProvider>
+        <Person></Person>
+      </HttpProvider>
     </div>
   );
 }
-
 export default App;

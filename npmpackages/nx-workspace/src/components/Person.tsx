@@ -3,7 +3,7 @@ import { useHttpProvider } from 'src/npm/http/HttpProvider';
 
 const Person = () => {
   const { get, post } = useHttpProvider();
-  get('/todos', {
+  get('/todoss', {
     params: {
       fname: 'misloo',
     },
